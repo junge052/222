@@ -1,0 +1,638 @@
+/* -------------------------
+   RESET
+-------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fff;
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 12px;
+  line-height: 1;
+
+  overflow-x: hidden;
+
+  cursor: none;
+}
+
+
+/* -------------------------
+   SELECTION
+-------------------------- */
+
+::selection {
+  background: white;
+  color: black;
+}
+
+
+/* -------------------------
+   HEADER
+-------------------------- */
+
+.top-bar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  padding: 8px 10px;
+
+  z-index: 100;
+
+  mix-blend-mode: difference;
+
+  pointer-events: none;
+}
+
+.top-center {
+  text-align: center;
+}
+
+#clock {
+  text-align: right;
+}
+
+
+/* -------------------------
+   ASCII
+-------------------------- */
+
+.ascii-section {
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 130vh;
+}
+
+
+.ascii {
+  margin: 0;
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: clamp(5px,
+      0.56vw,
+      11px);
+
+  line-height: 0.82;
+
+  letter-spacing: -0.08em;
+
+  white-space: pre;
+
+  user-select: none;
+
+  transform-origin: center;
+}
+
+
+#asciiHero {
+  width: max-content;
+
+  transition:
+    transform 0.15s linear,
+    filter 0.15s linear;
+}
+
+
+/* -------------------------
+   HERO TEXT
+-------------------------- */
+
+.hero-copy {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  text-align: center;
+
+  z-index: 2;
+
+  mix-blend-mode: difference;
+}
+
+.hero-copy p {
+  margin: 4px;
+}
+
+
+/* -------------------------
+   DATA
+-------------------------- */
+
+.data {
+  min-height: 60vh;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top:
+    1px solid white;
+
+  border-bottom:
+    1px solid white;
+}
+
+.data-column {
+  padding: 10px;
+
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+}
+
+.data-column:not(:last-child) {
+  border-right:
+    1px solid white;
+}
+
+.data p {
+  margin: 0;
+}
+
+
+/* -------------------------
+   SMALL ASCII
+-------------------------- */
+
+.small-ascii {
+  font-size:
+    clamp(7px, 0.8vw, 14px);
+
+  line-height: 0.9;
+}
+
+
+/* -------------------------
+   TERMINAL
+-------------------------- */
+
+.terminal {
+  min-height: 100vh;
+
+  padding: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    flex-end;
+
+  border-top:
+    1px solid white;
+}
+
+.terminal-history {
+  flex: 1;
+
+  padding-top: 50px;
+}
+
+.terminal-history p {
+  margin:
+    0 0 8px 0;
+}
+
+
+.command-line {
+  display: flex;
+
+  gap: 10px;
+
+  border-top:
+    1px solid white;
+
+  padding-top: 10px;
+}
+
+
+#command {
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: inherit;
+
+  caret-color: white;
+}
+
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+
+footer {
+  height: 40px;
+
+  padding:
+    0 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  border-top:
+    1px solid white;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* -------------------------
+   CUSTOM CURSOR
+-------------------------- */
+
+#cursor {
+  position: fixed;
+
+  width: 9px;
+  height: 9px;
+
+  background: white;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  transform:
+    translate(-50%, -50%);
+
+  mix-blend-mode:
+    difference;
+}
+
+
+/* -------------------------
+   GLITCH
+-------------------------- */
+
+body.glitch {
+  filter: invert(1);
+}
+
+body.glitch #asciiHero {
+  transform:
+    scaleX(1.1) skewX(5deg);
+}
+
+
+/* -------------------------
+   MOBILE
+-------------------------- */
+
+@media (max-width: 700px) {
+
+  body {
+    font-size: 10px;
+  }
+
+  .top-center {
+    display: none;
+  }
+
+  .top-bar {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .data {
+    grid-template-columns:
+      1fr;
+  }
+
+  .data-column:not(:last-child) {
+    border-right: none;
+
+    border-bottom:
+      1px solid white;
+  }
+
+  .ascii {
+    font-size: 5px;
+  }
+
+}
+
+.top-bar a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.top-nav a::before {
+  content: "[";
+}
+
+.top-nav a::after {
+  content: "]";
+}
+
+/* =================================
+   INTERVIEWS
+================================= */
+
+.interview-page {
+  padding-top: 80px;
+}
+
+.interview-intro {
+  min-height: 70vh;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.interview-intro h1 {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  font-size: clamp(30px, 8vw, 70px);
+  line-height: 0.8;
+  font-weight: normal;
+  letter-spacing: -0.06em;
+}
+
+::selection {
+  background-color: rgb(243, 247, 164);
+  color: white;
+}
+
+.intro-description {
+  max-width: 400px;
+}
+
+
+/* INTERVIEW ROW */
+
+.interview {
+  border-top: 1px solid white;
+}
+
+.interview:last-child {
+  border-bottom: 1px solid white;
+}
+
+
+.interview-header {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    80px 1fr 150px 40px;
+
+  padding: 12px 10px;
+
+  border: 0;
+
+  background: black;
+  color: white;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+.interview-header:hover {
+  background: white;
+  color: black;
+}
+
+
+/* HIDDEN TRANSCRIPT */
+
+.interview-content {
+  display: none;
+
+  grid-template-columns:
+    1fr 2fr;
+
+  gap: 40px;
+
+  padding: 40px 10px 100px;
+
+  border-top: 1px solid white;
+}
+
+
+.interview.open .interview-content {
+  display: grid;
+}
+
+
+.interview-meta p {
+  margin: 0 0 5px;
+}
+
+
+.transcript {
+  max-width: 800px;
+}
+
+
+.question {
+  margin:
+    0 0 15px;
+
+  text-transform: uppercase;
+}
+
+
+.answer {
+  margin:
+    0 0 50px;
+
+  max-width: 600px;
+
+  line-height: 1.4;
+}
+
+/* =================================
+   GAME GATEWAY
+================================= */
+
+.game-gateway {
+  min-height: 100vh;
+
+  padding:
+    60px 10px 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+
+.game-status,
+.game-bottom {
+  display: flex;
+
+  justify-content:
+    space-between;
+}
+
+
+.game-center {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.door {
+  font-family: inherit;
+
+  font-size:
+    clamp(8px, 1vw, 14px);
+
+  line-height: 1;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.game-center:hover .door {
+  transform:
+    scale(1.08);
+}
+
+
+.game-information {
+  line-height: 1.3;
+}
+
+
+.game-information p {
+  margin: 4px;
+}
+
+
+.enter-game {
+  color: white;
+
+  text-decoration: none;
+
+  border:
+    1px solid white;
+
+  padding:
+    10px 20px;
+
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+
+.enter-game:hover {
+  background: white;
+
+  color: black;
+}
+
+
+.blink {
+  animation:
+    blink 1s steps(1) infinite;
+}
+
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+
+}

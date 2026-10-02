@@ -1,0 +1,341 @@
+/* PASTED CODE */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-family: menlo, monospace;
+  overflow: hidden;
+  background-color: #6AFFB7;
+}
+
+.axis {
+  position: relative;
+  margin-top: 3.5vw;
+  text-align: center;
+  font-size: 1.25vw;
+  color: rgb(255, 0, 0) !important;
+  transform: scaleX(2.5);
+}
+
+.one-diamond {
+  animation: one_diamond 33s linear infinite;
+}
+
+@keyframes one_diamond {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.two-diamonds {
+  animation: two_diamonds 66s linear infinite;
+}
+
+@keyframes two_diamonds {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
+.three-diamonds {
+  animation: three_diamonds 99s linear infinite;
+}
+
+@keyframes three_diamonds {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.four-diamonds {
+  animation: four_diamonds 132s linear infinite;
+}
+
+@keyframes four_diamonds {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
+.five-diamonds {
+  animation: five_diamonds 165s linear infinite;
+}
+
+@keyframes five_diamonds {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.six-diamonds {
+  animation: six_diamonds 198s linear infinite;
+}
+
+@keyframes six_diamonds {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
+.seven-diamonds {
+  animation: seven_diamonds 231s linear infinite;
+}
+
+@keyframes seven_diamonds {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.eight-diamonds {
+  animation: eight_diamonds 264s linear infinite;
+}
+
+@keyframes eight_diamonds {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.scope {
+  position: relative;
+  width: 25vw;
+  height: 25vw;
+  transform-style: preserve-3d;
+  animation: rotate_gallery 33s linear infinite;
+}
+
+@keyframes rotate_gallery {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.scope span {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  transform-origin: center center;
+  transform-style: preserve-3d;
+
+  transform:
+    rotateY(calc(var(--i) * 60deg))
+    translateZ(18vw);
+}
+
+.scope span pre {
+  position: absolute;
+  top: 0;
+  transition: 2s;
+}
+
+/* ORIGINAL  */
+
+pre {
+  animation: pre_bg_color 1s linear;
+}
+
+@keyframes pre_bg_color {
+  from {
+    background-color: magenta !important;
+  }
+  to {
+    background-color: none;
+  }
+}
+
+.ascii-art {
+  margin-top: 50%;
+  text-align: center;
+  font-size: 0.15vw;
+  animation: ascii_art 1s linear;
+}
+
+@keyframes ascii_art {
+  from {
+    transition: ease-in-out;
+    border-radius: 0.25vw;
+    background-color: magenta;
+    color: white;
+    transform: rotateX(10deg);
+  }
+  to {
+    transition: ease-in-out;
+    transform: rotateX(0deg);
+    background-color: none;
+    border: none;
+    color: black;
+  }
+}
+
+.ascii-art:hover {
+  cursor: pointer;
+  background-color: aqua;
+  transform: rotateX(15deg) scale(125%);
+  padding: 1vw;
+}
+
+.ascii-art:active {
+  transform: rotateX(15deg) scale(125%);
+  padding: 1vw;
+  margin-left: -2.5vw;
+  position: absolute;
+  background-color: hotpink;
+  color: white;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+
+/* .irregulars {
+  color: hotpink;
+}
+
+.squid {
+  color: magenta;
+}
+
+.king {
+  color: gold;
+}
+
+.prisoner {
+  color: orange;
+}
+
+.columns {
+  color: aquamarine;
+}
+
+.anomaly {
+  color: deepskyblue;
+} */
+
+/* HOVER EFFECTS */
+
+/* .irregulars:hover {
+}
+
+.squid:hover {
+}
+
+.king:hover {
+}
+
+.prisoner:hover {
+}
+
+.columns:hover {
+}
+
+.anomaly:hover {
+} */
+
+@media only screen and (max-width: 600px) {
+  .axis {
+    font-size: 5vw;
+    transform: scaleX(1.25);
+  }
+
+  .ascii-art {
+    font-size: 0.33vw;
+    margin-top: 65vw;
+  }
+
+  .scope span {
+    transform: rotateY(calc(var(--i) * 72deg)) translateZ(33vw);
+  }
+
+  .ascii-art:hover {
+    background-color: hotpink;
+    color: white;
+  }
+}
+.command-line {
+  position: fixed;
+  bottom: 2vw;
+  left: 2vw;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-family: monospace;
+  font-size: 14px;
+  color: black;
+
+  z-index: 1000;
+}
+
+.prompt {
+  font-family: monospace;
+}
+
+#commandInput {
+  width: 250px;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-family: monospace;
+  font-size: 14px;
+  color: black;
+
+  padding: 0;
+  caret-color: black;
+}
+
+#commandInput::selection {
+  background: black;
+  color: #6AFFB7;
+}
+.command-area {
+    position: fixed;
+  bottom: 2vw;
+  left: 2vw;
+  width: 300px;
+}
+
+.instruction {
+  font-family: Menlo, monospace;
+  font-size: .5em;
+  text-align: right;
+
+}
