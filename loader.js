@@ -7,7 +7,7 @@ commandInput.addEventListener("keydown", function(event) {
     const command = commandInput.value.trim().toLowerCase();
 
     if (command === "enter") {
-      window.location.href = "index.html";
+      window.location.href = "home.html";
     }
 
     commandInput.value = "";
